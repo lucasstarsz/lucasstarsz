@@ -1,6 +1,6 @@
 ## What's a Java Toolchain?
 
-[Gradle](https://gradle.org/) has this neat little concept they've been working on lately, called _toolchains_. A _toolchain_ is basically just the tools that a JDK contains -- `javac`, `javadoc`, etc -- but provided to you in a way such that you can configure what exact tools your Gradle project uses.
+[Gradle](https://gradle.org/) has this neat little concept they've been working on lately, called _[toolchains](https://docs.gradle.org/current/userguide/toolchains.html)_. A _toolchain_ is basically just the tools that a JDK contains -- `javac`, `javadoc`, etc -- but provided to you in a way such that you can configure what exact tools your Gradle project uses.
 
 In FastJ, we've used this technology to set the general language version to be 17 -- targeting `Java 17`:
 
@@ -12,7 +12,7 @@ This means the entire project will make use of Java 17 for compilation, runtime 
 
 The best parts are still coming up, though:
 
-- Gradle automatically detects what JDKs you have installed, and will use that to select the correct JDK for your project. (You can see what order it detects these JDKs in [here](https://docs.gradle.org/7.4/userguide/toolchains.html#sec:precedence).)
+- Gradle automatically detects what JDKs you have installed, and will use that to select the correct JDK for your project. (You can see what order it detects these JDKs in [here](https://docs.gradle.org/current/userguide/toolchains.html#sec:precedence).)
 
 - If you don't have a version of Java installed that matches the toolchain requirement, **Gradle will automatically download the correct version of Java for you.** That's right -- they'll handle all this for you if you don't. You'll never have to worry about downloading Java at this rate.
 
@@ -45,6 +45,8 @@ PS F:\github\lucasstarsz\FastJ> gradle -q javaToolchains
 
 PS F:\github\lucasstarsz\FastJ>
 ```
+
+More information can be found [here](https://docs.gradle.org/7.4/userguide/toolchains.html#sec:auto_detection).
 
 ## I'm not seeing all my JDKs...
 
